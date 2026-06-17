@@ -12,17 +12,11 @@
         <section class="generator-section" id="generator" aria-label="AutoMark Automotive Story Generator">
           <div class="section-heading-main">
             <p class="section-badge">Live Generator</p>
-            <h2>Build the final story</h2>
+            <h2>منصة اوتومارك الاعلانية</h2>
             <span id="imageCount">0 مرفوعة</span>
           </div>
 
           <div class="workspace">
-            <div class="preview-panel">
-              <div class="phone-frame">
-                <canvas id="storyCanvas" width="1080" height="1620" aria-label="معاينة صورة الستوري النهائية"></canvas>
-              </div>
-            </div>
-
             <div class="controls-panel">
               <label class="drop-zone" for="imageInput" id="dropZone">
                 <input id="imageInput" type="file" accept="image/*" multiple />
@@ -38,10 +32,10 @@
               <div class="field-stack">
                 <div class="label-row">
                   <label for="captionText">تكست الصورة</label>
-                  <span id="wordCounter">0 من 70 كلمة</span>
+                  <span id="wordCounter">0 من 100 كلمة</span>
                 </div>
                 <textarea id="captionText" rows="4" maxlength="520" placeholder="اكتب التكست الذي يظهر أسفل التصميم..."></textarea>
-                <p class="hint" id="captionHint">يظهر داخل الصورة النهائية. آخر حد 70 كلمة.</p>
+                <p class="hint" id="captionHint">يظهر داخل الصورة النهائية. آخر حد 100 كلمة.</p>
               </div>
 
               <div class="toolbar">
@@ -63,6 +57,12 @@
                 <div class="analysis-list" id="analysisList">
                   <p class="empty-state">لما تضيف صور، هتشوف تقييم كل صورة، وهل مناسبة للجريد، ومين هتكون الصورة الأكبر.</p>
                 </div>
+              </div>
+            </div>
+
+            <div class="preview-panel">
+              <div class="phone-frame">
+                <canvas id="storyCanvas" width="1080" height="1620" aria-label="معاينة صورة الستوري النهائية"></canvas>
               </div>
             </div>
           </div>

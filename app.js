@@ -1,6 +1,6 @@
 const MAX_IMAGES = 10;
 const MAX_GRID_IMAGES = 6;
-const MAX_WORDS = 70;
+const MAX_WORDS = 100;
 const BASE_STORY = { width: 1080, height: 1620 };
 const STORY = { width: 1080, height: 1620 };
 const DEFAULT_RADIUS = 0;
@@ -598,9 +598,9 @@ const Renderer = {
     let paddingY = Math.round(maxHeight * 0.07);
     const maxWidth = STORY.width - paddingX * 2;
     const maxTextHeight = maxHeight - paddingY * 2;
-    let fontSize = Math.max(26, Math.round(STORY.width * 0.04));
+    let fontSize = Math.max(22, Math.round(STORY.width * 0.04));
     let lines = wrapCanvasText(text, maxWidth, fontSize, "650");
-    while (fontSize > 24 && lines.length * (fontSize + 11) > maxTextHeight) {
+    while (fontSize > 18 && lines.length * (fontSize + 11) > maxTextHeight) {
       fontSize -= 2;
       lines = wrapCanvasText(text, maxWidth, fontSize, "650");
     }
@@ -948,9 +948,9 @@ function handleCaptionInput() {
   const words = getWords(els.caption.value);
   if (words.length > MAX_WORDS) {
     els.caption.value = words.slice(0, MAX_WORDS).join(" ");
-    els.captionHint.textContent = "تم إيقاف النص عند 70 كلمة.";
+    els.captionHint.textContent = "تم إيقاف النص عند 100 كلمة.";
   } else {
-    els.captionHint.textContent = "يظهر داخل الصورة النهائية. آخر حد 70 كلمة.";
+    els.captionHint.textContent = "يظهر داخل الصورة النهائية. آخر حد 100 كلمة.";
   }
   state.caption = els.caption.value.trim();
   updateAll();

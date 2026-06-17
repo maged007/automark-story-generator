@@ -179,7 +179,7 @@ button:hover:not(:disabled),
 
 .workspace {
   display: grid;
-  grid-template-columns: minmax(280px, 440px) minmax(320px, 1fr);
+  grid-template-columns: minmax(320px, 1fr) minmax(280px, 440px);
   gap: clamp(20px, 4vw, 42px);
   align-items: start;
 }
@@ -326,6 +326,7 @@ textarea:focus {
 
 .toolbar {
   flex-wrap: wrap;
+  align-items: center;
 }
 
 button {
@@ -348,13 +349,14 @@ button:disabled {
 }
 
 .primary-button {
-  flex: 1 1 190px;
+  flex: 1 1 220px;
   color: var(--white);
   background: linear-gradient(135deg, var(--primary-red), var(--dark-red));
   box-shadow: 0 18px 34px rgba(225, 29, 46, 0.22);
 }
 
 .ghost-button {
+  flex: 0 0 auto;
   color: var(--ink);
   border: 1px solid rgba(225, 29, 46, 0.12);
   background: rgba(255, 255, 255, 0.78);
@@ -476,7 +478,7 @@ button:disabled {
   }
 
   .preview-panel {
-    order: -1;
+    order: 2;
   }
 }
 
@@ -513,6 +515,7 @@ button:disabled {
   .primary-button,
   .ghost-button {
     width: 100%;
+    flex: 1 1 100%;
   }
 
   .analysis-card {
