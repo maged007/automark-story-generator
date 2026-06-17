@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>AutoMark Story Generator</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <div class="site-frame">
+        <section class="generator-section" id="generator" aria-label="AutoMark Automotive Story Generator">
+          <div class="section-heading-main">
+            <p class="section-badge">Live Generator</p>
+            <h2>Build the final story</h2>
+            <span id="imageCount">0 مرفوعة</span>
+          </div>
+
+          <div class="workspace">
+            <div class="preview-panel">
+              <div class="phone-frame">
+                <canvas id="storyCanvas" width="1080" height="1620" aria-label="معاينة صورة الستوري النهائية"></canvas>
+              </div>
+            </div>
+
+            <div class="controls-panel">
+              <label class="drop-zone" for="imageInput" id="dropZone">
+                <input id="imageInput" type="file" accept="image/*" multiple />
+                <span class="drop-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" role="img">
+                    <path d="M12 3v12m0-12 4 4m-4-4-4 4M4 15v3a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3v-3" />
+                  </svg>
+                </span>
+                <strong>ارفع صور السيارة</strong>
+                <span>ارفع حتى 10 صور. النظام يختار أفضل صور للعرض: أمامية، جانبية، داخلية، وتفاصيل.</span>
+              </label>
+
+              <div class="field-stack">
+                <div class="label-row">
+                  <label for="captionText">تكست الصورة</label>
+                  <span id="wordCounter">0 من 70 كلمة</span>
+                </div>
+                <textarea id="captionText" rows="4" maxlength="520" placeholder="اكتب التكست الذي يظهر أسفل التصميم..."></textarea>
+                <p class="hint" id="captionHint">يظهر داخل الصورة النهائية. آخر حد 70 كلمة.</p>
+              </div>
+
+              <div class="toolbar">
+                <button class="primary-button" id="downloadButton" type="button" disabled>
+                  <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M12 3v12m0 0 4-4m-4 4-4-4M5 19h14" />
+                  </svg>
+                  تحميل الصورة
+                </button>
+                <button class="ghost-button" id="clearButton" type="button" disabled>مسح الكل</button>
+              </div>
+              <p class="export-status" id="exportStatus" aria-live="polite"></p>
+
+              <div class="analysis-panel" id="analysis" aria-live="polite">
+                <div class="section-heading">
+                  <h2>تحليل الصور</h2>
+                  <span id="layoutLabel">في انتظار الصور</span>
+                </div>
+                <div class="analysis-list" id="analysisList">
+                  <p class="empty-state">لما تضيف صور، هتشوف تقييم كل صورة، وهل مناسبة للجريد، ومين هتكون الصورة الأكبر.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+    </main>
+    <script src="app.js"></script>
+  </body>
+</html>
