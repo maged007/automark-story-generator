@@ -1,16 +1,14 @@
 const MAX_IMAGES = 10;
 const MAX_GRID_IMAGES = 6;
 const MAX_WORDS = 100;
-const BASE_STORY = { width: 1080, height: 1620 };
-const STORY = { width: 1080, height: 1620 };
+const FINAL_WIDTH = 1080;
+const FINAL_HEIGHT = 1620;
+const BASE_STORY = { width: FINAL_WIDTH, height: FINAL_HEIGHT };
+const STORY = { width: FINAL_WIDTH, height: FINAL_HEIGHT };
 const DEFAULT_RADIUS = 0;
 const BASE_CONTENT = { x: 16, y: 16, w: 1048, h: 1588 };
 const FOOTER_LOGO_SRC = "assets/automark-footer-logo.png";
 const QR_SRC = "assets/automark-qr.png";
-
-const EXPORT_SIZES = [
-  { id: "portrait", label: "Portrait 1080×1620", width: 1080, height: 1620 },
-];
 
 const VEHICLE_TYPES = {
   front34: { label: "Front 3/4 Exterior", score: 100 },
@@ -134,7 +132,6 @@ const state = {
   layoutId: null,
   manualLayoutId: null,
   layoutVariantIndex: 0,
-  sizeId: "portrait",
   captionPosition: "bottom",
   uploadSequence: 0,
   manualSort: false,
@@ -837,12 +834,11 @@ function updateAll() {
 }
 
 function updateCanvasSize() {
-  const size = EXPORT_SIZES.find((item) => item.id === state.sizeId) || EXPORT_SIZES[0];
-  STORY.width = size.width;
-  STORY.height = size.height;
-  els.canvas.width = size.width;
-  els.canvas.height = size.height;
-  els.canvas.closest(".phone-frame").style.aspectRatio = `${size.width} / ${size.height}`;
+  STORY.width = FINAL_WIDTH;
+  STORY.height = FINAL_HEIGHT;
+  els.canvas.width = FINAL_WIDTH;
+  els.canvas.height = FINAL_HEIGHT;
+  els.canvas.closest(".phone-frame").style.aspectRatio = `${FINAL_WIDTH} / ${FINAL_HEIGHT}`;
 }
 
 function renderAnalysis() {
